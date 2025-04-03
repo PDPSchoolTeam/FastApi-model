@@ -42,9 +42,12 @@ print(stu)
 print(stu.username)
 print(sch)
 print(sch.address)
+
+print(stu.email)
 """
 id=1 name='Anna' username='anna24' email='annna@gmail.com' password='qwert1234' school_id=1
 anna24
 id=1 name='PDP School' email='pdpschool@gmail.com' address='Tashkent' class_room=200
 Tashkent
+annna@gmail.com
 """
