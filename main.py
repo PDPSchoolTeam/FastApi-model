@@ -41,4 +41,14 @@ async def student_create(students: Student):
     return {"data": school_data}
 
 
+@router.get("/school/{school_name}")
+async def school_name():
+    ...
+
+
+@router.get("/student/{student_name}")
+async def student_name():
+    ...
+
+
 app.include_router(router)
