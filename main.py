@@ -1,53 +1,44 @@
-from pydantic import BaseModel
+from fastapi import FastAPI, APIRouter
+from model import School, Student
+from data import school_db, student_db
+
+app = FastAPI()
+
+router = APIRouter(
+    prefix="/api"
+)
+
+school_data: dict = {}
+student_data: dict = {}
 
 
-class Student(BaseModel):
-    id: int
-    name: str
-    username: str
-    email: str
-    password: str
-    school_id: int = 1
+# http://127.0.0.1:8000/api/school
+@router.get("/school")
+async def school():
+    return {"data": school_db}
 
 
-class School(BaseModel):
-    id: int
-    name: str
-    email: str
-    address: str
-    class_room: int
+@router.get("/student")
+async def student():
+    return {"data": student_db}
 
 
-student = {
-    "id": 1,
-    "name": "Anna",
-    "username": "anna24",
-    "email": "annna@gmail.com",
-    "password": "qwert1234",
-}
+@router.post("/school")
+async def school_create(schools: School):
+    school_data["title"] = schools.title
+    school_data["room"] = schools.room
+    school_data["teacher"] = schools.teacher
 
-school = {
-    "id": 1,
-    "name": "PDP School",
-    "email": "pdpschool@gmail.com",
-    "address": "Tashkent",
-    "class_room": 200,
-}
+    return {"data": school_data}
 
-stu = Student(**student)
 
-sch = School(**school)
+@router.post("/student")
+async def student_create(students: Student):
+    school_data["name"] = students.name
+    school_data["email"] = students.email
+    school_data["room_id"] = students.room_id
+    school_data["since"] = students.since
+    return {"data": school_data}
 
-print(stu)
-print(stu.username)
-print(sch)
-print(sch.address)
 
-print(stu.email)
-"""
-id=1 name='Anna' username='anna24' email='annna@gmail.com' password='qwert1234' school_id=1
-anna24
-id=1 name='PDP School' email='pdpschool@gmail.com' address='Tashkent' class_room=200
-Tashkent
-annna@gmail.com
-"""
+app.include_router(router)
