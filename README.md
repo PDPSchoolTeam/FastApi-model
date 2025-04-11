@@ -20,3 +20,12 @@ Ushbu loyihani lokalda ishga tushirish uchun:
    git clone https://github.com/PDPSchoolTeam/FastApi-model.git
    cd school-api
    ```
+2. Virtual muhit yaratish:
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate  # Windows uchun: `venv\Scripts\activate`
+   ```
+3. Bog'liqliklarni o'rnatish:
+   ```bash
+   pip install -r requirements.txt
+   ```
