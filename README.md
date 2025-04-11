@@ -17,6 +17,6 @@ Ushbu loyihani lokalda ishga tushirish uchun:
 
 1. Repozitoriyani klonlash:
    ```bash
-   git clone https://github.com/yourusername/school-api.git
+   git clone https://github.com/PDPSchoolTeam/FastApi-model.git
    cd school-api
    ```
