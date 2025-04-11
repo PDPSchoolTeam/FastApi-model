@@ -29,3 +29,44 @@ Ushbu loyihani lokalda ishga tushirish uchun:
    ```bash
    pip install -r requirements.txt
    ```
+4. Ilovani ishga tushirish:
+   ```bash
+   uvicorn main:app --reload
+   ```
+## API Endpoints
+
+### Maktablar
+   ```bash
+   GET /api/school: Barcha maktablarni olish.
+   POST /api/school: Yangi maktab yaratish.
+   GET /api/school/{school_name}: Maktabni nomi bo'yicha olish.
+   ```
+### O'quvchilar
+   ```bash
+   GET /api/student: Barcha o'quvchilarni olish.
+   POST /api/student: Yangi o'quvchi yaratish.
+   GET /api/student/{student_name}: O'quvchini nomi bo'yicha olish.
+   ```
+### Misol
+
+Barcha o'quvchilarni olish uchun:
+   ```bash
+   GET http://127.0.0.1:8000/api/student
+   ```
+   Yangi o'quvchi yaratish:
+   ```bash
+   POST http://127.0.0.1:8000/api/student
+   Content-Type: application/json
+
+   {
+     "name": "John Doe",
+     "email": "john.doe@example.com",
+     "room_id": 101,
+     "since": "2022-01-01"
+   }
+   ```
+## Litsenziya
+
+Ushbu loyiha MIT litsenziyasi ostida litsenziyalanadi - tafsilotlar uchun LICENSE faylini ko'rib chiqing.
+Bu `README.md` fayli sizning GitHub'dagi loyihangizni boshqalar uchun tushunarli qilishga yordam beradi.
+
