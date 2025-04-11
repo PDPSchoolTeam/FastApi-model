@@ -11,6 +11,9 @@ Bu FastAPI asosidagi API, maktab uchun ta'lim boshqaruv tizimi (LMS). Bu API, ma
 - **Yangi o'quvchi yaratish**: Yangi o'quvchi qo'shish, ism, email, xona va o'qishga qabul qilingan sana bilan.
 - **O'quvchini nomi bo'yicha olish**: Maxsus o'quvchini ismi bilan olish.
 
+<img width="1697" alt="Screenshot 2025-04-11 at 10 01 15" src="https://github.com/user-attachments/assets/348a7991-4273-4f71-888d-fe1604c7fec4" />
+
+
 ## O'rnatish
 
 Ushbu loyihani lokalda ishga tushirish uchun:
