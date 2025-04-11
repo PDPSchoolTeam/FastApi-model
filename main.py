@@ -2,7 +2,12 @@ from fastapi import FastAPI, APIRouter
 from model import School, Student
 from data import school_db, student_db
 
-app = FastAPI()
+app = FastAPI(
+    title="PDP School API LMS",
+    version="0.0.2",
+    description="Student for LMS"
+
+)
 
 router = APIRouter(
     prefix="/api"
@@ -42,13 +47,16 @@ async def student_create(students: Student):
 
 
 @router.get("/school/{school_name}")
-async def school_name():
-    ...
+async def school_name(school_name:str):
+    for school in school_db:
+        if school["title"].lower() == school_name.lower():
+            return {"data" : school }
 
 
 @router.get("/student/{student_name}")
-async def student_name():
-    ...
-
+async def student_name(student_name:str):
+    for student in student_db:
+        if student["name"].lower() == student_name.lower():
+            return {"data":student}
 
 app.include_router(router)
