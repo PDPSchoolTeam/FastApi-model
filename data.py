@@ -7,7 +7,7 @@ school_db = [
     {
         "title": "IT School",
         "room": [421, 122, 231],
-        "teacher": ["Bekzod", "Akbar", "Sevinch"]
+        "teacher": ["Bekzod", "Akbar", "Ali"]
     }
 ]
 
